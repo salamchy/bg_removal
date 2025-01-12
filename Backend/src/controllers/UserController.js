@@ -26,6 +26,8 @@ export const clerkWebHooks = async (req, res) => {
           photo: data.image_url,
         };
 
+        console.log("User Data to be created:", userData);
+
         await UserModel.create(userData);
         res.status(200).json({
           success: true,

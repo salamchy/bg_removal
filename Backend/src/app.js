@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import userRouter from "./routes/user.routes.js";
 
 const app = express();
 
@@ -10,13 +11,10 @@ app.use(
   })
 );
 
-app.use(
-  express.json({
-    limit: "5mb",
-  })
-);
+app.use(express.json());
 
 //api route
 app.get("/", (req, res) => res.send("API is Working"));
+app.use("/api/user", userRouter);
 
 export default app;
