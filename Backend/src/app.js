@@ -16,4 +16,7 @@ app.use(
   })
 );
 
+//api route
+app.get("/", (req, res) => res.send("API is Working"));
+
 export default app;
